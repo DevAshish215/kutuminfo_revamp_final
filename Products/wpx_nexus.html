@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPS Nexus | KutumbInfo</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="products.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/favicon2.png" type="image/x-icon" id="favicon">
+    <link rel="preload" href="../navbar.html" as="fetch" crossorigin="anonymous">
+    <style>
+        /* Custom styles for WPS Nexus */
+        .wps-hero {
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+        }
+        .wps-feature-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .wps-feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .wps-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .wps-icon i {
+            font-size: 24px;
+            color: #fff;
+        }
+        .wps-cta-section {
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .wps-cta-section h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #fff;
+        }
+        .wps-cta-section .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .wps-cta-section .btn-outline {
+            border-color: #fff;
+            color: #fff;
+        }
+        .wps-cta-section .btn-outline:hover {
+            background: #fff;
+            color: #1a237e;
+        }
+        .wps-workflow-image {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .wps-workflow-image img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .wps-dashboard-preview {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .wps-dashboard-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26,35,126,0.8), rgba(13,71,161,0.8));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .wps-dashboard-preview:hover::before {
+            opacity: 1;
+        }
+        .wps-dashboard-preview img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+        /* Updated styles for feature cards in row */
+        .features-grid-detailed {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .feature-detailed-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+        .feature-content {
+            flex: 1;
+        }
+        .feature-content h3 {
+            margin-bottom: 15px;
+            color: #1a237e;
+        }
+        .feature-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        /* Updated styles for overview text */
+        .overview-text p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 40px;
+        }
+        @media (max-width: 992px) {
+            .feature-detailed-card {
+                min-width: 250px;
+            }
+            .overview-text p {
+                font-size: 1.2rem;
+                padding: 0 30px;
+            }
+        }
+        @media (max-width: 768px) {
+            .features-grid-detailed {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-detailed-card {
+                width: 100%;
+                max-width: 100%;
+            }
+            .overview-text p {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+        }
+        .solution-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .solution-feature i {
+            font-size: 24px;
+            color: #1a237e;
+        }
+        .solution-feature-content {
+            flex: 1;
+        }
+        .solution-feature-content h4 {
+            margin: 0;
+            color: #333;
+        }
+        .solution-content {
+            flex: 1;
+            padding-left: 70px;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+        .feature-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .feature-text {
+            flex: 1;
+        }
+        .feature-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            height: 100%;
+        }
+        #dashboard .section-header h2 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        #dashboard .overview-content {
+            text-align: center;
+        }
+        #dashboard .list-unstyled {
+            padding-left: 0;
+            list-style: none;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-top: 30px;
+        }
+        #dashboard .list-unstyled li {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="fintech-hero-section reveal-section">
+            <div id="particles-js"></div>
+            <div class="product-hero-container">
+                <div class="product-hero-content reveal-item">
+                    <div class="breadcrumb">Home > Products > Fintech Solutions > WPS Nexus</div>
+                    <h1>WPS<span class="text-accent">Nexus</span></h1>
+                    <h2>A Secure Next-Generation Solution for Seamless Payroll Compliance</h2>
+                 
+                </div>
+                <div class="product-hero-image reveal-item">
+                    <img src="../images/product_img/What we offer kyc-img.webp" alt="WPS Nexus Solution">
+                </div>
+            </div>
+            <!-- Particles container -->
+            <div class="particles-container"></div>
+        </section>
+
+        <!-- What We Are Section -->
+        <section class="solution-section reveal-section" id="what-we-are">
+            <div class="container">
+                <div class="section-header reveal-item">
+                    <h2>What we are?</h2>
+                </div>
+                <div class="overview-content reveal-item">
+                    <div class="overview-text">
+                        <p>WPS Nexus is a comprehensive and innovative business management solution that delivers unparalleled value to its customers. With its modular design, seamless integration capabilities, and exceptional customer support, WPS empowers businesses to streamline their operations, boost productivity, and drive strategic growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Offer Section -->
+        <section class="solution-section reveal-section" id="what-we-offer">
+            <div class="container">
+                <div class="section-header reveal-item">
+                    <h2>What we offer</h2>
+                </div>
+                <div class="features-grid-detailed">
+                    <div class="feature-detailed-card reveal-item wps-feature-card">
+                        <div class="wps-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Seamless Integration</h3>
+                            <p>Ensure seamless integration with financial institutions and banks by supporting multiple data formats and industry standards</p>
+                        </div>
+                    </div>
+                    <div class="feature-detailed-card reveal-item wps-feature-card">
+                        <div class="wps-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>User-Friendly Interface</h3>
+                            <p>Provide user-friendly interface for diverse users, from technical experts to non-technical stakeholders</p>
+                        </div>
+                    </div>
+                    <div class="feature-detailed-card reveal-item wps-feature-card">
+                        <div class="wps-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Scalable Processing</h3>
+                            <p>Support scalable processing capabilities, efficiently handling both small datasets and large-scale operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="solution-section reveal-section" id="key-features">
+            <div class="container">
+                <div class="section-header reveal-item">
+                    <h2>Key Features & Capabilities</h2>
+                </div>
+                <div class="solution-container">
+                    <div class="solution-content reveal-item">
+                        <ul class="solution-features">
+                            <li class="solution-feature">
+                                <i class="fas fa-upload"></i>
+                                <div class="solution-feature-content">
+                                    <h4>Data upload & Management</h4>
+                                </div>
+                            </li>
+                            <li class="solution-feature">
+                                <i class="fas fa-university"></i>
+                                <div class="solution-feature-content">
+                                    <h4>Banking Integration</h4>
+                                </div>
+                            </li>
+                            <li class="solution-feature">
+                                <i class="fas fa-code"></i>
+                                <div class="solution-feature-content">
+                                    <h4>API Access</h4>
+                                </div>
+                            </li>
+                            <li class="solution-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <div class="solution-feature-content">
+                                    <h4>Visualization Tools</h4>
+                                </div>
+                            </li>
+                            <li class="solution-feature">
+                                <i class="fas fa-tasks"></i>
+                                <div class="solution-feature-content">
+                                    <h4>Batch Processing</h4>
+                                </div>
+                            </li>
+                            <li class="solution-feature">
+                                <i class="fas fa-users-cog"></i>
+                                <div class="solution-feature-content">
+                                    <h4>User Management and Permissions</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-image reveal-item">
+                        <img src="../images/product_img/KYC What we are index-img.webp" alt="WPS Nexus Features">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reporting Section -->
+        <section class="solution-section reveal-section" id="reporting">
+            <div class="container">
+                <div class="section-header reveal-item">
+                    <h2>Reporting, Monitoring & Collaboration</h2>
+                </div>
+                <div class="features-grid-detailed">
+                    <div class="feature-detailed-card reveal-item wps-feature-card">
+                        <div class="wps-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Reporting & Exporting</h3>
+                            <p>Generate reports summarizing processing results and export processed data in various formats for further use</p>
+                        </div>
+                    </div>
+                    <div class="feature-detailed-card reveal-item wps-feature-card">
+                        <div class="wps-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Monitoring & Logging</h3>
+                            <p>Track processing tasks and monitor performance while maintaining logs for auditing and troubleshooting</p>
+                        </div>
+                    </div>
+                    <div class="feature-detailed-card reveal-item wps-feature-card">
+                        <div class="wps-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Collaboration</h3>
+                            <p>Allow multiple users to collaborate on projects and share results and datasets with stakeholders easily</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Protection Section -->
+        <section class="solution-section reveal-section" id="data-protection">
+            <div class="container">
+                <div class="section-header reveal-item">
+                    <h2>Data Protection Features</h2>
+                </div>
+                <div class="solution-container">
+                    <div class="solution-content reveal-item">
+                        <div class="feature-detailed-card wps-feature-card">
+                            <div class="feature-content">
+                                <img src="../images/product_img/KYB.webp" alt="WPS Nexus Security" class="feature-image">
+                                <div class="feature-text">
+                                    <h3>Data Encryption</h3>
+                                    <p>Ensures sensitive payroll data is secure</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-detailed-card wps-feature-card">
+                            <div class="feature-content">
+                                <img src="../images/product_img/KYB.webp" alt="WPS Nexus Security" class="feature-image">
+                                <div class="feature-text">
+                                    <h3>Two Factor Authentication</h3>
+                                    <p>Added layer of security for employers accessing the System</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accuracy Section -->
+        <section class="cta-section reveal-section wps-cta-section">
+            <div class="container">
+                <div class="reveal-item">
+                    <h2>99% Accuracy in Payroll Validation - Automated compliance checks eliminate human error and enhance trust</h2>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Call to action</a>
+                        <a href="#contact" class="btn btn-outline">Talk to our Experts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow Section -->
+        <section class="solution-section reveal-section" id="workflow">
+            <div class="container">
+                <div class="section-header reveal-item">
+                    <h2>Work Flow</h2>
+                </div>
+                <div class="solution-image reveal-item wps-workflow-image">
+                    <img src="../images/product_img/AZAPI Bank passbook.webp" alt="WPS Nexus Workflow" class="img-fluid">
+                </div>
+                <div class="section-header reveal-item">
+                    <h2>Salary Processing through WPS Nexus</h2>
+                </div>
+                <div class="solution-image reveal-item wps-workflow-image">
+                    <img src="../images/product_img/rekyc-img.webp" alt="WPS Nexus Salary Processing" class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-Time Section -->
+        <section class="cta-section reveal-section wps-cta-section">
+            <div class="container">
+                <div class="reveal-item">
+                    <h2>Real-Time Salary Disbursement - Ensure timely payments with instant transaction tracking and reporting</h2>
+                 
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Request Demo</a>
+                        <a href="#contact" class="btn btn-outline">Let's talk solution</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section class="solution-section reveal-section" id="dashboard">
+            <div class="container">
+                <div class="section-header reveal-item">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="solution-image reveal-item wps-dashboard-preview">
+                    <img src="../images/product_img/kycplus.webp" alt="WPS Nexus Dashboard" class="img-fluid">
+                </div>
+                <div class="overview-content reveal-item">
+                    <ul class="list-unstyled">
+                        <li>• Experience the Future of Business Efficiency with WPS Nexus.</li>
+                        <li>• Ready to elevate your business operations and achieve greater efficiency?</li>
+                        <li>• Explore the WPS Nexus solution and witness the power of integrated, intelligent business management firsthand.</li>
+                        <li>• Schedule a personalized demo and see how WPS Nexus can transform the way you work.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intuitive Dashboard Section -->
+        <section class="cta-section reveal-section wps-cta-section">
+            <div class="container">
+                <div class="reveal-item">
+                    <h2>Intuitive Dashboard - All your payroll and compliance data in one clean, user-friendly interface.</h2>
+                    <p></p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">One click start your journey</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="products.js"></script>
+</body>
+</html> 
