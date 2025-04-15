@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-  --primary-color: #003366;
+  --primary-color: #192939;
   --secondary-color: #6eaf2a;
   --secondary-hover: #5b9423;
   --accent-color: #92df3f;
@@ -186,7 +186,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 .dropdown-box img {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 5%;
   background-color: var(--white);
   padding: 10px;
   transition: background-color var(--transition-normal);
@@ -399,8 +399,8 @@ section, .services-section, .our-mission-section, .working-domain-section,
   background-color: var(--secondary-color);
   color: var(--white);
   border: none;
-  border-radius: 10px;
-  padding: 12px 24px;
+  border-radius: 50px;
+  padding: 15px 35px;
   font-size: 1em;
   cursor: pointer;
   font-weight: bold;
@@ -581,6 +581,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 .we-are-subsection p {
   line-height: 1.6;
   color: var(--text-secondary);
+  text-align: justify;
 }
 
 .we-are-icon {
@@ -588,8 +589,8 @@ section, .services-section, .our-mission-section, .working-domain-section,
   height: 60px;
   padding: 10px;
   background-color: var(--white);
-  border: 3px solid var(--secondary-color);
-  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5%;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
@@ -607,7 +608,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 .why-choose-us-section {
   padding: 2rem 0;
   text-align: left;
-  color: #003366;
+  color: var(--primary-color);
   border-top: 1px solid #dfdcdc;
 }
 
@@ -615,7 +616,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
   font-weight: 500;
   padding-left: 5%;
   margin-bottom: 20px;
-  color: #003366;
+  color: var(--primary-color);
 }
 
 .why-choose-us-section .subheading {
@@ -639,7 +640,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
   align-items: flex-start;
   gap: 15px;
   text-align: left;
-  color: #003366;
+  color: var(--primary-color);
   border-bottom: 1px solid #dbdbda;
 }
 
@@ -649,7 +650,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
   height: 60px;
   flex-shrink: 0;
   border: 2px solid #9bc842;
-  border-radius: 50%;
+  border-radius: 5%;
   padding: 10px;
   box-sizing: border-box;
   transition: transform 0.3s ease;
@@ -666,7 +667,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 
 .why-choose-us-item h3 {
   font-weight: 500;
-  color: #003366;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 
@@ -674,6 +675,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
   color: #666666;
   line-height: 1.6;
   margin: 0;
+  text-align: justify;
 }
 
 /* Responsive styles for content sections */
@@ -744,7 +746,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 
 .counter-box p {
   font-size: 1.2em;
-  color: #003366;
+  color: var(--primary-color);
   margin-top: 10px;
 }
 
@@ -779,14 +781,15 @@ section, .services-section, .our-mission-section, .working-domain-section,
   margin-right: -50vw;
   padding: 2rem 0;
   text-align: center;
-  color: #003366;
+  color: var(--primary-color);
   border-top: 1px solid #dfdcdc;
+  padding-bottom: 100px;
 }
 
 .section-title {
   font-weight: 500;
   margin-bottom: 20px;
-  color: #003366;
+  color: var(--primary-color);
 }
 
 .services-container {
@@ -805,7 +808,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
   align-items: flex-start;
   gap: 15px;
   text-align: justify;
-  color: #003366;
+  color: var(--primary-color);
   padding: 30px;
 }
 
@@ -815,7 +818,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
   height: 60px;
   flex-shrink: 0;
   border: 2px solid #9bc842;
-  border-radius: 50%;
+  border-radius: 5%;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -840,7 +843,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 
 .service-content h3 {
   font-weight: 500;
-  color: #003366;
+  color: var(--primary-color);
   margin-bottom: 8px;
 }
 
@@ -959,7 +962,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 .domain-icon {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 5%;
   margin: 0 auto 15px auto;
   display: flex;
   align-items: center;
@@ -976,7 +979,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 }
 
 .domain-title {
-  color: #003366;
+  color: var(--primary-color);
   font-weight: 500;
   margin-bottom: 10px;
   transition: color 0.3s ease;
@@ -985,6 +988,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 .domain-description {
   color: #666666;
   transition: color 0.3s ease;
+  text-align: justify;
 }
 
 /* Hover effects */
@@ -1033,7 +1037,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 }
 
 .our-partners-section h2 {
-  color: #003366;
+  color: var(--primary-color);
   margin-bottom: 40px;
   font-weight: 500;
 }
@@ -1246,7 +1250,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 
 #testimonials .section-header h2 {
   font-size: 2.5em;
-  color: #003366;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -1315,7 +1319,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 
 #testimonials .testimonial-item h3 {
   font-size: 1.2em;
-  color: #003366;
+  color: var(--primary-color);
   margin: 10px 0 5px;
 }
 
@@ -1376,7 +1380,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 
 /* Headings and Elements */
 #about-us h3 {
-  color: #003366;
+  color: var(--primary-color);
   margin-bottom: 15px;
   font-weight: 500;
   font-size: 1.5em;
@@ -1482,7 +1486,7 @@ section, .services-section, .our-mission-section, .working-domain-section,
 }
 
 .footer-links ul li a {
-  color: #003366;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: normal;
   transition: color 0.3s ease-in-out;

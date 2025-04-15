@@ -1,4 +1,4 @@
-/* ====== GENERAL STYLING ====== */
+/* ====== GENERAL/BASE STYLING ====== */
 body {
     margin: 0;
     padding: 0 !important;
@@ -32,9 +32,9 @@ section {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding: 80px 20px;
+    padding: 40px 20px;
     box-sizing: border-box;
-    overflow: hidden; /* Ensure no horizontal scroll */
+    overflow: hidden;
 }
 
 /* Ensure specific section backgrounds stretch full width */
@@ -62,7 +62,7 @@ section {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: #003366;
+    color: #192939;
     margin-bottom: 20px;
     font-weight: 500;
     position: relative;
@@ -179,10 +179,15 @@ section {
     font-weight: 500;
 }
 
+.why-hero-content h1 .brand-name {
+    color: #61B535;
+}
+
 .why-hero-content p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
 }
 
 .why-hero-image {
@@ -267,10 +272,48 @@ section {
     }
 }
 
+/* ====== OVERVIEW SECTION ====== */
+.overview-section {
+    background-color: #f9f9f9;
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+.overview-section .section-header {
+    margin-bottom: 20px;
+}
+
+.overview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.overview-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+    margin: 0 auto 20px;
+    max-width: 1200px;
+}
+
+.overview-content p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.overview-content p:last-child {
+    margin-bottom: 0;
+}
+
 /* ====== STRENGTHS SECTION ====== */
 .strengths-section {
     background-color: #f8f9fa;
-    padding: 70px 20px;
+    padding: 40px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -339,7 +382,7 @@ section {
     left: 0;
     width: 6px;
     height: 60%;
-    background: linear-gradient(to bottom, #6eaf2a, #003366);
+    background: linear-gradient(to bottom, #6eaf2a, #192939);
     border-radius: 3px;
     transform: translateY(40%);
     transition: all 0.3s ease;
@@ -363,14 +406,16 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(110, 175, 42, 0.1) 0%, rgba(0, 51, 102, 0.05) 100%);
-    border-radius: 12px;
+    /* background: linear-gradient(135deg, rgba(110, 175, 42, 0.1) 0%, rgba(0, 51, 102, 0.05) 100%); */
+    
+    border: 2px solid #61B535;
+    border-radius: 5%;
     transition: all 0.3s ease;
 }
 
 .strength-card:hover .strength-icon {
     transform: scale(1.1);
-    background: linear-gradient(135deg, rgba(110, 175, 42, 0.2) 0%, rgba(0, 51, 102, 0.1) 100%);
+    /* background: linear-gradient(135deg, rgba(110, 175, 42, 0.2) 0%, rgba(0, 51, 102, 0.1) 100%); */
 }
 
 .strength-icon img {
@@ -389,7 +434,7 @@ section {
 }
 
 .strength-card h3 {
-    color: #003366;
+    color: #192939;
     margin-bottom: 12px;
     font-size: 1.5rem;
     font-weight: 500;
@@ -413,15 +458,178 @@ section {
 }
 
 .strength-card p {
-    color: #666;
     font-size: 1rem;
     line-height: 1.5;
+    text-align: justify;
+    color: #666;
+}
+
+/* ====== ADDITIONAL STRENGTHS SECTION ====== */
+.additional-strengths-section {
+    background-color: #f5f8fd;
+    position: relative;
+    padding-top: 40px;
+}
+
+.additional-strengths-section .section-header {
+    margin-bottom: 30px;
+}
+
+.additional-strengths-content {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 40px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+}
+
+.additional-strengths-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Media queries for strengths section */
+@media (max-width: 768px) {
+    .additional-strengths-content {
+        padding: 0 20px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Media queries for overview section */
+@media (max-width: 768px) {
+    .overview-container {
+        padding: 0 20px;
+    }
+    
+    .overview-content {
+        font-size: 1.05rem;
+    }
+}
+
+/* ====== WHY WE ARE DIFFERENT SECTION ====== */
+.different-section {
+    background-color: #f5f8fd;
+    position: relative;
+    padding: 40px 20px 60px;
+}
+
+.different-section .section-header {
+    margin-bottom: 40px;
+}
+
+.different-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.different-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.different-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.different-content {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+.different-content h2 {
+    color: #192939;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.different-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #6eaf2a;
+}
+
+.different-content h2 .text-accent {
+    color: #6eaf2a;
+}
+
+.different-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.highlight-box {
+    background-color: rgba(110, 175, 42, 0.08);
+    border-left: 4px solid #6eaf2a;
+    padding: 20px 25px;
+    border-radius: 0 8px 8px 0;
+    margin: 30px 0;
+}
+
+.highlight-box h3 {
+    color: #192939;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.different-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.different-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+    .different-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .different-image {
+        grid-row: 1;
+    }
+    
+    .different-content {
+        grid-row: 2;
+    }
+    
+    .different-content h2 {
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    .different-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 /* ====== TECHNOLOGY SHOWCASE SECTION ====== */
 .tech-showcase-section {
     background-color: #ffffff;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 .tech-showcase-container {
@@ -446,15 +654,15 @@ section {
 
 .tech-content h2 {
     font-size: 2.5rem;
-    color: #003366;
+    color: #192939;
     margin-bottom: 25px;
     font-weight: 500;
 }
 
 .tech-content p {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1rem;
     margin-bottom: 40px;
+    text-align: justify;
 }
 
 .tech-list {
@@ -503,7 +711,7 @@ section {
 /* ====== VALUE PROPOSITION SECTION ====== */
 .value-section {
     background-color: #f0f5ff;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 .value-cards {
@@ -537,39 +745,101 @@ section {
 }
 
 .value-icon {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 51, 102, 0.1);
-    border-radius: 50%;
+    /* background-color: rgba(0, 51, 102, 0.1); */
+    
+    border: 2px solid #61B535;
+    border-radius: 5%;
+    transition: all 0.3s ease;
+
 }
 
 .value-icon img {
     width: 50px;
     height: 50px;
     object-fit: contain;
+    
 }
 
 .value-card h3 {
-    color: #003366;
+    color: #192939;
     margin-bottom: 15px;
     font-size: 1.5rem;
     font-weight: 500;
 }
 
 .value-card p {
-    color: #666;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* ====== ORGANIZATION STRUCTURE SECTION ====== */
+.org-structure-section {
+    background-color: #f9faff;
+    position: relative;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+.org-structure-section .section-header {
+    margin-bottom: 0;
+}
+
+.org-structure-section .org-structure-content {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.org-structure-content {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+}
+
+.org-structure-content .center-para {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.org-structure-content .center-para + p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.org-structure-content p:first-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1.4;
+}
+
+.org-structure-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .org-structure-content {
+        padding: 0 20px;
+        font-size: 1.1rem;
+    }
 }
 
 /* ====== CTA SECTION ====== */
 .cta-section {
     background: linear-gradient(135deg, #003366 0%, #00152b 100%);
     color: #ffffff;
-    padding: 100px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
@@ -585,9 +855,10 @@ section {
 }
 
 .cta-container p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
 }
 
 .cta-buttons {
@@ -635,178 +906,7 @@ section {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-/* ====== OVERVIEW SECTION ====== */
-.overview-section {
-    background-color: #f9f9f9;
-    position: relative;
-    padding-bottom: 40px; /* Reduced bottom padding from the default 80px */
-}
-
-.overview-section .section-header {
-    margin-bottom: 30px; /* Reduced from the default 60px */
-}
-
-.overview-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px; /* Add left and right margin */
-    text-align: center; /* Center align the container */
-}
-
-.overview-content {
-    font-size: 1.15rem; /* Slightly reduced font size from 1.2rem */
-    line-height: 1.6; /* Reduced line height from 1.8 */
-    color: #444;
-    text-align: center; /* Center align the text */
-    margin: 0 auto; /* Center the content */
-    max-width: 1050px; /* Increased width from 950px to 1050px */
-}
-
-.overview-content p {
-    margin-bottom: 15px; /* Reduced bottom margin from 20px to 15px */
-    text-align: center; /* Center align the paragraph text */
-}
-
-.overview-content p:last-child {
-    margin-bottom: 5px; /* Significantly reduced margin for the last paragraph */
-}
-
-/* Additional Core Strengths Section */
-.additional-strengths-section {
-    background-color: #f5f8fd;
-    position: relative;
-}
-
-.additional-strengths-section .section-header {
-    margin-bottom: 30px; /* Reduced from the default 60px */
-}
-
-.additional-strengths-content {
-    max-width: 1200px; /* Increased from 1100px to 1200px */
-    margin: 0 auto 30px;
-    padding: 0 40px;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #444;
-    text-align: center; /* Center align the text */
-}
-
-.additional-strengths-content p {
-    margin-bottom: 15px;
-    text-align: center; /* Center align the paragraph text */
-}
-
-/* Media queries for strengths section */
-@media (max-width: 768px) {
-    .additional-strengths-content {
-        padding: 0 20px;
-        font-size: 1.1rem;
-    }
-}
-
-/* Media queries for overview section */
-@media (max-width: 768px) {
-    .overview-container {
-        padding: 0 20px;
-    }
-    
-    .overview-content {
-        font-size: 1.05rem; /* Reduced from 1.1rem */
-    }
-}
-
-/* ====== RESPONSIVE STYLING ====== */
-@media (max-width: 1024px) {
-    .strengths-grid {
-        gap: 30px;
-    }
-    
-    .strength-card {
-        padding: 30px;
-    }
-
-    .why-hero-content h1 {
-        font-size: 2.8rem;
-    }
-    
-    .section-header h2 {
-        font-size: 2.2rem;
-    }
-
-    .cta-container h2 {
-        font-size: 2.4rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .why-hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .why-hero-content {
-        max-width: 100%;
-    }
-
-    .tech-showcase-container {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .tech-list {
-        justify-content: center;
-    }
-
-    .strength-card {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .strength-icon {
-        margin: 0 0 20px 0;
-    }
-    
-    .strength-card h3::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 60px 20px;
-    }
-
-    .tech-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .strengths-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .why-hero-section {
-        padding: 140px 0 120px;
-        min-height: 550px;
-    }
-}
-
-@media (max-width: 576px) {
-    .why-hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .tech-list {
-        grid-template-columns: 1fr;
-    }
-
-    .value-card {
-        min-width: 100%;
-    }
-}
-
-/* Animation classes */
+/* ====== ANIMATIONS ====== */
 .reveal-section {
     opacity: 0;
     transform: translateY(50px);
@@ -892,146 +992,187 @@ section {
     z-index: 1;
 }
 
-/* Why We Are Different Section */
-.different-section {
-    background-color: #f5f8fd;
-    position: relative;
-    padding: 70px 20px 60px;
-}
-
-.different-section .section-header {
-    margin-bottom: 40px;
-}
-
-.different-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.different-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.different-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.different-content {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #444;
-}
-
-.different-content h2 {
-    color: #003366;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.different-content h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: #6eaf2a;
-}
-
-.different-content h2 .text-accent {
-    color: #6eaf2a;
-}
-
-.different-content p {
-    margin-bottom: 20px;
-}
-
-.highlight-box {
-    background-color: rgba(110, 175, 42, 0.08);
-    border-left: 4px solid #6eaf2a;
-    padding: 20px 25px;
-    border-radius: 0 8px 8px 0;
-    margin: 30px 0;
-}
-
-.highlight-box h3 {
-    color: #003366;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-.different-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.different-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 900px) {
-    .different-grid {
-        grid-template-columns: 1fr;
+/* ====== RESPONSIVE STYLING ====== */
+@media (max-width: 1024px) {
+    .strengths-grid {
         gap: 30px;
     }
     
-    .different-image {
-        grid-row: 1;
+    .strength-card {
+        padding: 30px;
+    }
+
+    .why-hero-content h1 {
+        font-size: 2.8rem;
     }
     
-    .different-content {
-        grid-row: 2;
+    .section-header h2 {
+        font-size: 2.2rem;
     }
-    
-    .different-content h2 {
+
+    .cta-container h2 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .why-hero-container {
+        flex-direction: column;
         text-align: center;
-        font-size: 2rem;
     }
     
-    .different-content h2::after {
+    .why-hero-content {
+        max-width: 100%;
+    }
+
+    .tech-showcase-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .tech-list {
+        justify-content: center;
+    }
+
+    .strength-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .strength-icon {
+        margin: 0 0 20px 0;
+    }
+    
+    .strength-card h3::after {
         left: 50%;
         transform: translateX(-50%);
     }
 }
 
-/* Organisation Structure Section */
-.org-structure-section {
-    background-color: #f9faff;
-    position: relative;
-    padding: 80px 20px;
-    overflow: hidden;
+@media (max-width: 768px) {
+    section {
+        padding: 30px 20px;
+    }
+
+    .tech-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .strengths-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-hero-section {
+        padding: 140px 0 120px;
+        min-height: 550px;
+    }
 }
 
-.org-structure-content {
-    max-width: 1200px;
-    margin: 0 auto 30px;
-    padding: 0 40px;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #444;
+@media (max-width: 576px) {
+    .why-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .tech-list {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        min-width: 100%;
+    }
+}
+
+/* Base paragraph styling */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Center-aligned paragraph class */
+.center-para {
+    text-align: center !important;
+    display: block;
+    width: 100%;
+}
+
+/* Center-aligned paragraphs */
+.hero-tagline,
+.section-intro,
+.value-intro,
+.org-intro,
+.cta-tagline {
     text-align: center;
+}
+
+/* Update specific paragraph styles */
+.why-hero-content p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+}
+
+.overview-content p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.strength-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.tech-content p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.value-card p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.cta-container p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+}
+
+.additional-strengths-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.different-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
 .org-structure-content p {
+    font-size: 1rem;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: justify;
 }
 
-@media (max-width: 768px) {
-    .org-structure-content {
-        padding: 0 20px;
-        font-size: 1.1rem;
-    }
+.highlight-box p {
+    font-size: 1rem;
+    text-align: justify;
 }
+
+/* CTA Section */
+.cta-section .center-para {
+    text-align: center !important;
+    margin: 0 auto 30px;
+    max-width: 1000px;
+    width: 90%;
+}
+
