@@ -53,7 +53,7 @@ section {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding: 80px 20px;
+    padding: 40px 20px;
     box-sizing: border-box;
     overflow: hidden; /* Ensure no horizontal scroll */
 }
@@ -141,6 +141,8 @@ section {
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
     text-indent: 0;
+    text-align: left;
+    text-justify: inter-word;
 }
 
 .web-hero-image {
@@ -237,7 +239,7 @@ section {
 /* ====== OVERVIEW SECTION ====== */
 .overview-section {
     background-color: #f8f9fa;
-    padding: 70px 20px;
+    padding: 40px 20px;
 }
 
 .overview-content {
@@ -252,6 +254,8 @@ section {
     margin-bottom: 20px;
     line-height: 1.8;
     text-indent: 0;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .overview-highlight {
@@ -272,12 +276,14 @@ section {
 
 .overview-highlight p {
     margin-bottom: 0;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* ====== SERVICES SECTION ====== */
 .services-section {
     background-color: #ffffff;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 .services-grid {
@@ -328,15 +334,15 @@ section {
 }
 
 .service-icon {
-    flex: 0 0 70px;
+    flex: 0 0 50px;
     margin-right: 20px;
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
-    background-color: rgba(0, 51, 102, 0.05);
+    border-radius: 5%;
+    /* background-color: rgba(0, 51, 102, 0.05); */
     transition: all 0.4s ease;
 }
 
@@ -345,7 +351,7 @@ section {
 }
 
 .service-icon img {
-    height: 40px;
+    height: 30px;
     width: auto;
     transition: all 0.3s ease;
     filter: brightness(0.9);
@@ -388,11 +394,14 @@ section {
     color: #666;
     margin-bottom: 0;
     line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* ====== TECH SHOWCASE SECTION ====== */
 .tech-showcase-section {
     background-color: #f8f9fa;
+    padding: 40px 20px;
 }
 
 .tech-showcase-container {
@@ -422,6 +431,8 @@ section {
     color: #666;
     margin-bottom: 40px;
     line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .tech-list {
@@ -472,6 +483,7 @@ section {
 /* ====== APPROACH SECTION ====== */
 .approach-section {
     background-color: #ffffff;
+    padding: 40px 20px;
 }
 
 .approach-grid {
@@ -505,15 +517,17 @@ section {
 }
 
 .approach-icon {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(0, 51, 102, 0.05);
+    border-radius: 5%;
+    /* background-color: rgba(0, 51, 102, 0.05); */
     margin-bottom: 25px;
     transition: all 0.4s ease;
+    border: 2px solid #61B535;
+    border-radius: 5%;
 }
 
 .approach-card:hover .approach-icon {
@@ -561,11 +575,14 @@ section {
     color: #666;
     margin-bottom: 0;
     line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* ====== FEATURES SECTION ====== */
 .features-section {
     background-color: #f8f9fa;
+    padding: 40px 20px;
 }
 
 .features-grid {
@@ -599,15 +616,19 @@ section {
 }
 
 .feature-card img {
-    height: 60px;
+    height: 50px;
     width: auto;
     margin-bottom: 25px;
     transition: all 0.3s ease;
     filter: brightness(0.9);
+    padding: 10px;
+    border: 2px solid #61B535;
+    border-radius: 5%;
 }
 
 .feature-card:hover img {
     transform: scale(1.1);
+    filter: brightness(1);
 }
 
 .feature-card h3 {
@@ -640,11 +661,14 @@ section {
     color: #666;
     margin-bottom: 0;
     line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* ====== PROJECTS SECTION ====== */
 .projects-section {
     background-color: #ffffff;
+    padding: 40px 20px;
 }
 
 .projects-slider {
@@ -717,7 +741,7 @@ section {
     background: linear-gradient(135deg, #003366 0%, #00152b 100%);
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 40px 20px;
 }
 
 .cta-container {
@@ -735,6 +759,8 @@ section {
     font-size: 1.1rem;
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    text-justify: inter-word;
 }
 
 .cta-buttons {
